@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechZone Institute</title>
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+
+    <!-- Container for the registration form -->
+    <div class="form-container">
+        <h1>Register for Online Courses</h1>
+        <p>Please fill in this form to create an account.</p>
+
+        <!-- Registration Form -->
+        <form action="/submit-registration" method="POST">
+            <!-- Full Name Input -->
+            <label for="fullName">Full Name</label>
+            <input type="text" id="fullName" name="fullName" required>
+
+            <!-- Email Address Input -->
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" required>
+
+            <!-- Phone Number Input -->
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <!-- Course Selection -->
+            <label for="course">Select Course</label>
+            <select id="course" name="course" required>
+                <option value="">--Choose a Course--</option>
+                <option value="webDev">English Courses</option>
+                <option value="dataSci">Computer Courses</option>
+                <option value="design">School Courses</option>
+            </select>
+
+            <!-- Password Input -->
+            <label for="password">Create Password</label>
+            <input type="password" id="password" name="password" required>
+            <!-- Confirm Password Input -->
+            <label for="confirmPassword">Confirm Password</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" required>
+
+            <!-- Submit Button -->
+            <button type="submit">Register</button>
+        </form>
+    </div>
+
+</body>
+</html>

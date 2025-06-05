@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechZone Institute - Online Tech Education</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/main.css">
+    <style>
+        /* Custom CSS for elements that need more specific styling */
+        .hero {
+            background: linear-gradient(rgba(29, 78, 216, 0.8), rgba(29, 78, 216, 0.8)), url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .course-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(29, 78, 216, 0.2);
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .nav-link::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: white;
+            transition: width 0.3s;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animate-fade-in {
+            animation: fadeIn 1s ease-out forwards;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased text-gray-800">
+    <!-- Navigation -->
+    <nav class="bg-blue-900 text-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <i class="fas fa-laptop-code text-2xl text-blue-300"></i>
+                <a href="#" class="text-xl font-bold">TechZone<span class="text-blue-300">Institute</span></a>
+            </div>
+            
+            <!-- Mobile menu button -->
+            <button id="mobile-menu-button" class="md:hidden focus:outline-none">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+            
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex space-x-8">
+                <a href="#home" class="nav-link hover:text-blue-300 transition">Home</a>
+                <a href="#courses" class="nav-link hover:text-blue-300 transition">Courses</a>
+                <a href="#about" class="nav-link hover:text-blue-300 transition">About</a>
+                <a href="#testimonials" class="nav-link hover:text-blue-300 transition">Testimonials</a>
+                <a href="#contact" class="nav-link hover:text-blue-300 transition">Contact</a>
+            </div>
+            
+            <div class="hidden md:block">
+                <a href="login.html" class="bg-blue-700 hover:bg-blue-600 px-4 py-2 rounded-md transition">Login</a>
+            </div>
+            <div class="hidden md:block">
+                <a href="signup.html" class="bg-blue-700 hover:bg-blue-600 px-4 py-2 rounded-md transition">signup</a>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-blue-800 px-4 py-2">
+            <a href="#home" class="block py-2 hover:text-blue-300 transition">Home</a>
+            <a href="#courses" class="block py-2 hover:text-blue-300 transition">Courses</a>
+            <a href="#about" class="block py-2 hover:text-blue-300 transition">About</a>
+            <a href="#testimonials" class="block py-2 hover:text-blue-300 transition">Testimonials</a>
+            <a href="#contact" class="block py-2 hover:text-blue-300 transition">Contact</a>
+            <a href="#login" class="block py-2 hover:text-blue-300 transition">Login</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero text-white py-20 md:py-32">
+        <div class="container mx-auto px-4 text-center animate-fade-in">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">Advance Your Tech Career</h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">Learn in-demand tech skills from industry experts with our online English and computer courses.</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#courses" class="bg-white text-blue-900 hover:bg-blue-100 px-8 py-3 rounded-md font-bold transition">Explore Courses</a>
+                <a href="#contact" class="bg-transparent border-2 border-white hover:bg-blue-800 px-8 py-3 rounded-md font-bold transition">Get Started</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="bg-blue-100 py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div class="p-4">
+                    <div class="text-blue-900 text-4xl font-bold mb-2">5,000+</div>
+                    <div class="text-gray-600">Students Enrolled</div>
+                </div>
+                <div class="p-4">
+                    <div class="text-blue-900 text-4xl font-bold mb-2">50+</div>
+                    <div class="text-gray-600">Courses Available</div>
+                </div>
+                <div class="p-4">
+                    <div class="text-blue-900 text-4xl font-bold mb-2">98%</div>
+                    <div class="text-gray-600">Satisfaction Rate</div>
+                </div>
+                <div class="p-4">
+                    <div class="text-blue-900 text-4xl font-bold mb-2">24/7</div>
+                    <div class="text-gray-600">Support Available</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section id="courses" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-4">Our Featured Courses</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Choose from our wide range of English and computer courses designed to boost your career.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Course 1 -->
+                <div class="course-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300">
+                    <div class="h-48 bg-blue-800 flex items-center justify-center">
+                        <i class="fas fa-code text-white text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Beginner</span>
+                            <span class="text-gray-600 text-sm">6 Weeks</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-blue-900 mb-2">Web Development Fundamentals</h3>
+                        <p class="text-gray-600 mb-4">Learn HTML, CSS, and JavaScript to build responsive websites from scratch.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-blue-900">$199</span>
+                            <a href="#" class="text-blue-700 hover:text-blue-900 font-medium">Enroll Now →</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Course 2 -->
+                <div class="course-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300">
+                    <div class="h-48 bg-blue-700 flex items-center justify-center">
+                        <i class="fas fa-language text-white text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">All Levels</span>
+                            <span class="text-gray-600 text-sm">8 Weeks</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-blue-900 mb-2">Business English Mastery</h3>
+                        <p class="text-gray-600 mb-4">Improve your professional English communication skills for the global workplace.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-blue-900">$149</span>
+                            <a href="#" class="text-blue-700 hover:text-blue-900 font-medium">Enroll Now →</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Course 3 -->
+                <div class="course-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300">
+                    <div class="h-48 bg-blue-600 flex items-center justify-center">
+                        <i class="fas fa-database text-white text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Advanced</span>
+                            <span class="text-gray-600 text-sm">10 Weeks</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-blue-900 mb-2">Data Science with Python</h3>
+                        <p class="text-gray-600 mb-4">Master data analysis, visualization, and machine learning with Python.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-blue-900">$299</span>
+                            <a href="#" class="text-blue-700 hover:text-blue-900 font-medium">Enroll Now →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#" class="inline-block bg-blue-900 hover:bg-blue-800 text-white px-6 py-3 rounded-md font-medium transition">View All Courses</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-blue-50">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row items-center">
+                <div class="lg:w-1/2 mb-8 lg:mb-0 lg:pr-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-6">Why Choose TechZone Institute?</h2>
+                    <p class="text-gray-700 mb-6">TechZone Institute is a premier online education platform specializing in English and computer courses designed to meet the demands of today's digital economy.</p>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 p-2 rounded-full mr-4">
+                                <i class="fas fa-check text-blue-800"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-blue-900 mb-1">Expert Instructors</h4>
+                                <p class="text-gray-600">Learn from industry professionals with years of practical experience.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 p-2 rounded-full mr-4">
+                                <i class="fas fa-check text-blue-800"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-blue-900 mb-1">Flexible Learning</h4>
+                                <p class="text-gray-600">Study at your own pace with 24/7 access to course materials.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 p-2 rounded-full mr-4">
+                                <i class="fas fa-check text-blue-800"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-blue-900 mb-1">Practical Skills</h4>
+                                <p class="text-gray-600">Gain hands-on experience with real-world projects and assignments.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/2">
+                    <div class="bg-white p-6 rounded-lg shadow-lg">
+                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" alt="Students learning" class="rounded-lg w-full h-auto">
+                        <div class="mt-6">
+                            <h3 class="text-xl font-bold text-blue-900 mb-2">Our Mission</h3>
+                            <p class="text-gray-700">To empower individuals worldwide with the technical and language skills needed to thrive in the digital age through accessible, high-quality online education.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-4">What Our Students Say</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Hear from our successful graduates who transformed their careers with TechZone Institute.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-blue-50 p-6 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-blue-200 flex items-center justify-center mr-4">
+                            <i class="fas fa-user text-blue-800"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Sarah Johnson</h4>
+                            <p class="text-blue-700 text-sm">Web Developer</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700">"The web development course gave me the skills and confidence to switch careers. Within 3 months of completing the course, I landed my first developer job!"</p>
+                    <div class="mt-4 text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="bg-blue-50 p-6 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-blue-200 flex items-center justify-center mr-4">
+                            <i class="fas fa-user text-blue-800"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Michael Chen</h4>
+                            <p class="text-blue-700 text-sm">Data Analyst</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700">"The data science program was comprehensive and practical. The instructors were knowledgeable and always available to help. Highly recommended!"</p>
+                    <div class="mt-4 text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="bg-blue-50 p-6 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-blue-200 flex items-center justify-center mr-4">
+                            <i class="fas fa-user text-blue-800"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Amina Diallo</h4>
+                            <p class="text-blue-700 text-sm">Marketing Manager</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700">"The Business English course significantly improved my professional communication skills. I now feel confident leading international meetings."</p>
+                    <div class="mt-4 text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-blue-900 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Transform Your Career?</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">Join thousands of students who have accelerated their careers with TechZone Institute.</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#courses" class="bg-white text-blue-900 hover:bg-blue-100 px-8 py-3 rounded-md font-bold transition">Browse Courses</a>
+                <a href="#contact" class="bg-transparent border-2 border-white hover:bg-blue-800 px-8 py-3 rounded-md font-bold transition">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row">
+                <div class="lg:w-1/2 mb-8 lg:mb-0 lg:pr-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-6">Get In Touch</h2>
+                    <p class="text-gray-700 mb-8">Have questions about our courses or need guidance on which program is right for you? Our team is here to help.</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-map-marker-alt text-blue-800"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-blue-900 mb-1">Location</h4>
+                                <p class="text-gray-600">123 Tech Street, Digital City, DC 10001</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-envelope text-blue-800"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-blue-900 mb-1">Email Us</h4>
+                                <p class="text-gray-600">info@techzoneinstitute.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-phone-alt text-blue-800"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-blue-900 mb-1">Call Us</h4>
+                                <p class="text-gray-600">+1 (555) 123-4567</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <h4 class="font-bold text-blue-900 mb-4">Follow Us</h4>
+                        <div class="flex space-x-4">
+                            <a href="#" class="bg-blue-100 hover:bg-blue-200 w-10 h-10 rounded-full flex items-center justify-center transition">
+                                <i class="fab fa-facebook-f text-blue-800"></i>
+                            </a>
+                            <a href="#" class="bg-blue-100 hover:bg-blue-200 w-10 h-10 rounded-full flex items-center justify-center transition">
+                                <i class="fab fa-twitter text-blue-800"></i>
+                            </a>
+                            <a href="#" class="bg-blue-100 hover:bg-blue-200 w-10 h-10 rounded-full flex items-center justify-center transition">
+                                <i class="fab fa-linkedin-in text-blue-800"></i>
+                            </a>
+                            <a href="#" class="bg-blue-100 hover:bg-blue-200 w-10 h-10 rounded-full flex items-center justify-center transition">
+                                <i class="fab fa-instagram text-blue-800"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/2">
+                    <div class="bg-white p-6 rounded-lg shadow-lg border border-gray-200">
+                        <h3 class="text-xl font-bold text-blue-900 mb-6">Send Us a Message</h3>
+                        <form id="contactForm">
+                            <div class="mb-4">
+                                <label for="name" class="block text-gray-700 mb-2">Full Name</label>
+                                <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                            </div>
+                            <div class="mb-4">
+                                <label for="email" class="block text-gray-700 mb-2">Email Address</label>
+                                <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                            </div>
+                            <div class="mb-4">
+                                <label for="subject" class="block text-gray-700 mb-2">Subject</label>
+                                <input type="text" id="subject" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                            </div>
+                            <div class="mb-6">
+                                <label for="message" class="block text-gray-700 mb-2">Message</label>
+                                <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-blue-900 hover:bg-blue-800 text-white px-6 py-3 rounded-md font-medium transition">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16 bg-blue-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-4">Frequently Asked Questions</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Find answers to common questions about our courses and enrollment process.</p>
+            </div>
+            
+            <div class="max-w-3xl mx-auto">
+                <div class="bg-white rounded-lg shadow-md overflow-hidden mb-4">
+                    <div class="faq-item border-b border-gray-200">
+                        <button class="faq-question w-full text-left px-6 py-4 flex justify-between items-center bg-white hover:bg-blue-50 transition">
+                            <span class="font-medium text-blue-900">How do I enroll in a course?</span>
+                            <i class="fas fa-chevron-down text-blue-700 transition-transform"></i>
+                        </button>
+                        <div class="faq-answer px-6 py-4 bg-blue-50 hidden">
+                            <p class="text-gray-700">Enrolling is easy! Simply browse our courses, select the one you're interested in, and click the "Enroll Now" button. You'll be guided through the registration and payment process.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-md overflow-hidden mb-4">
+                    <div class="faq-item border-b border-gray-200">
+                        <button class="faq-question w-full text-left px-6 py-4 flex justify-between items-center bg-white hover:bg-blue-50 transition">
+                            <span class="font-medium text-blue-900">What's the time commitment for courses?</span>
+                            <i class="fas fa-chevron-down text-blue-700 transition-transform"></i>
+                        </button>
+                        <div class="faq-answer px-6 py-4 bg-blue-50 hidden">
+                            <p class="text-gray-700">Course durations vary from 4 to 12 weeks depending on the program. Most students spend 5-10 hours per week on coursework, but you can study at your own pace.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-md overflow-hidden mb-4">
+                    <div class="faq-item border-b border-gray-200">
+                        <button class="faq-question w-full text-left px-6 py-4 flex justify-between items-center bg-white hover:bg-blue-50 transition">
+                            <span class="font-medium text-blue-900">Do you offer certificates upon completion?</span>
+                            <i class="fas fa-chevron-down text-blue-700 transition-transform"></i>
+                        </button>
+                        <div class="faq-answer px-6 py-4 bg-blue-50 hidden">
+                            <p class="text-gray-700">Yes! All our courses provide a certificate of completion that you can add to your LinkedIn profile or resume. Some programs also offer industry-recognized certifications.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-md overflow-hidden mb-4">
+                    <div class="faq-item border-b border-gray-200">
+                        <button class="faq-question w-full text-left px-6 py-4 flex justify-between items-center bg-white hover:bg-blue-50 transition">
+                            <span class="font-medium text-blue-900">What if I need help during my course?</span>
+                            <i class="fas fa-chevron-down text-blue-700 transition-transform"></i>
+                        </button>
+                        <div class="faq-answer px-6 py-4 bg-blue-50 hidden">
+                            <p class="text-gray-700">We offer multiple support channels including instructor Q&A, student forums, and 24/7 technical support. Our team is committed to helping you succeed.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="faq-item">
+                        <button class="faq-question w-full text-left px-6 py-4 flex justify-between items-center bg-white hover:bg-blue-50 transition">
+                            <span class="font-medium text-blue-900">Are there any prerequisites for your courses?</span>
+                            <i class="fas fa-chevron-down text-blue-700 transition-transform"></i>
+                        </button>
+                        <div class="faq-answer px-6 py-4 bg-blue-50 hidden">
+                            <p class="text-gray-700">Most beginner courses have no prerequisites. For advanced courses, we recommend checking the course description for specific requirements. Our English courses are available for all proficiency levels.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-blue-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <i class="fas fa-laptop-code text-2xl text-blue-300"></i>
+                        <a href="#" class="text-xl font-bold">TechZone<span class="text-blue-300">Institute</span></a>
+                    </div>
+                    <p class="text-blue-200 mb-4">Empowering the next generation of tech professionals through quality online education.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-blue-300 hover:text-white transition"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-blue-300 hover:text-white transition"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-blue-300 hover:text-white transition"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="text-blue-300 hover:text-white transition"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-blue-200 hover:text-white transition">Home</a></li>
+                        <li><a href="#courses" class="text-blue-200 hover:text-white transition">Courses</a></li>
+                        <li><a href="#about" class="text-blue-200 hover:text-white transition">About Us</a></li>
+                        <li><a href="#testimonials" class="text-blue-200 hover:text-white transition">Testimonials</a></li>
+                        <li><a href="#contact" class="text-blue-200 hover:text-white transition">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Courses</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-blue-200 hover:text-white transition">Web Development</a></li>
+                        <li><a href="#" class="text-blue-200 hover:text-white transition">Data Science</a></li>
+                        <li><a href="#" class="text-blue-200 hover:text-white transition">Business English</a></li>
+                        <li><a href="#" class="text-blue-200 hover:text-white transition">Cybersecurity</a></li>
+                        <li><a href="#" class="text-blue-200 hover:text-white transition">Cloud Computing</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Newsletter</h4>
+                    <p class="text-blue-200 mb-4">Subscribe to our newsletter for the latest course updates and tech insights.</p>
+                    <form class="flex">
+                        <input type="email" placeholder="Your email" class="px-4 py-2 rounded-l-md focus:outline-none text-gray-800 w-full">
+                        <button type="submit" class="bg-blue-700 hover:bg-blue-600 px-4 py-2 rounded-r-md transition">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="border-t border-blue-800 mt-12 pt-8 text-center text-blue-200">
+                <p>&copy; 2023 TechZone Institute. All rights reserved. | <a href="#" class="hover:text-white transition">Privacy Policy</a> | <a href="#" class="hover:text-white transition">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="fixed bottom-8 right-8 bg-blue-900 text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center transition opacity-0 invisible">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // FAQ Accordion
+        const faqQuestions = document.querySelectorAll('.faq-question');
+        
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const icon = question.querySelector('i');
+                
+                // Toggle answer visibility
+                answer.classList.toggle('hidden');
+                
+                // Rotate icon
+                icon.classList.toggle('transform');
+                icon.classList.toggle('rotate-180');
+                
+                // Close other open answers
+                faqQuestions.forEach(q => {
+                    if (q !== question) {
+                        q.nextElementSibling.classList.add('hidden');
+                        q.querySelector('i').classList.remove('transform', 'rotate-180');
+                    }
+                });
+            });
+        });
+        
+        // Back to Top Button
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.remove('opacity-100', 'visible');
+                backToTopButton.classList.add('opacity-0', 'invisible');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Form Submission
+        const contactForm = document.getElementById('contactForm');
+        
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Here you would typically send the form data to your Laravel backend
+            // For this example, we'll just show an alert
+            alert('Thank you for your message! We will get back to you soon.');
+            contactForm.reset();
+        });
+        
+        // Smooth Scrolling for Navigation Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+        
+        // Animate elements when they come into view
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.animate-fade-in');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.2;
+                
+                if (elementPosition < screenPosition) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        };
+        
+        // Run once on page load
+        animateOnScroll();
+        
+        // Run on scroll
+        window.addEventListener('scroll', animateOnScroll);
+    </script>
+</body>
+</html>
