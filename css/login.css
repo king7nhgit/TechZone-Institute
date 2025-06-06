@@ -1,97 +1,161 @@
-/* Reset margins and paddings */
+/* Base Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Set a soft blue background and center content */
 body {
-    background-color: #e6f0ff;  /* Light blue */
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(to right, #007BFF, #0056b3);
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    height: 100vh;
+    color: #333;
 }
 
-/* Main container styling */
-.login-container {
-    background-color: #ffffff;  /* White background */
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 6px 15px rgba(0, 123, 255, 0.15);
+/* Container */
+.login-wrapper {
     width: 100%;
-    max-width: 400px;
-    text-align: center;
+    max-width: 450px;
+    padding: 20px;
 }
 
-/* Heading styles */
-.login-container h1 {
-    color: #0056b3;  /* Darker blue */
+.login-card {
+    background: #fff;
+    border-radius: 15px;
+    padding: 40px 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    animation: fadeIn 0.5s ease;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Headings */
+.logo {
+    text-align: center;
+    color: #007BFF;
+    font-size: 1.8rem;
     margin-bottom: 10px;
 }
 
-.login-container p {
-    color: #444;
-    margin-bottom: 25px;
+.subtitle {
+    text-align: center;
+    color: #555;
+    margin-bottom: 30px;
+    font-size: 0.95rem;
 }
 
-/* Label styling */
-form label {
+/* Form */
+.login-form .input-group {
+    margin-bottom: 20px;
+}
+
+.login-form label {
     display: block;
-    text-align: left;
-    color: #003366;
-    font-weight: bold;
     margin-bottom: 5px;
+    font-weight: 600;
 }
 
-/* Input field styling */
-form input {
+.login-form input {
     width: 100%;
     padding: 12px;
-    margin-bottom: 20px;
-    border: 1px solid #b3d1ff;
-    border-radius: 5px;
-    font-size: 16px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    transition: border 0.3s;
 }
 
-/* Focus effect on input fields */
-form input:focus {
-    border-color: #007bff;
+.login-form input:focus {
+    border-color: #007BFF;
     outline: none;
 }
 
-/* Submit button styling */
-form button {
-    width: 100%;
-    padding: 12px;
-    background-color: #007bff;
-    color: #ffffff;
-    font-size: 16px;
-    font-weight: bold;
-    border: none;
-    border-radius: 5px;
+.password-wrapper {
+    position: relative;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    font-size: 1.1rem;
 }
 
-/* Hover effect for button */
-form button:hover {
-    background-color: #0056b3;
+/* Actions */
+.actions {
+    text-align: right;
+    margin-bottom: 20px;
 }
 
-/* Extra links below the form */
-.extras {
-    margin-top: 15px;
-    font-size: 14px;
-}
-
-.extras a {
-    color: #007bff;
+.actions a {
+    font-size: 0.85rem;
+    color: #007BFF;
     text-decoration: none;
 }
 
-.extras a:hover {
+.actions a:hover {
     text-decoration: underline;
+}
+
+/* Button */
+.login-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.login-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Footer */
+.footer-text {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9rem;
+}
+
+.footer-text a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.footer-text a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .login-card {
+        padding: 30px 20px;
+    }
+
+    .logo {
+        font-size: 1.5rem;
+    }
+
+    .subtitle {
+        font-size: 0.9rem;
+    }
 }

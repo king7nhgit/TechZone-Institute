@@ -1,0 +1,94 @@
+/* Base Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  background-color: #f0f6ff;
+  color: #333;
+}
+
+/* Container */
+.container {
+  width: 90%;
+  max-width: 1000px;
+  margin: auto;
+}
+
+/* Header */
+.header {
+  background: linear-gradient(to right, #007BFF, #0056b3);
+  padding: 40px 0;
+  color: white;
+  text-align: center;
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.tagline {
+  font-size: 1.1rem;
+  margin-top: 10px;
+}
+
+/* Main Content */
+.main-content {
+  padding: 40px 0;
+}
+
+.main-content section {
+  margin-bottom: 50px;
+}
+
+.main-content h2 {
+  font-size: 1.6rem;
+  color: #007BFF;
+  margin-bottom: 15px;
+}
+
+.main-content p {
+  font-size: 1rem;
+  color: #444;
+}
+
+/* City List */
+.city-list {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 10px;
+}
+
+.city-list li {
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+/* Footer */
+.footer {
+  background-color: #007BFF;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .logo {
+    font-size: 1.5rem;
+  }
+
+  .main-content h2 {
+    font-size: 1.3rem;
+  }
+
+  .main-content p {
+    font-size: 0.95rem;
+  }
+}
